@@ -1,12 +1,7 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 import { GoogleGenAI } from "@google/genai";
-const apiKey=process.env.API_KEY;
-if (!apiKey) {
-  throw new Error("API_KEY is missing. Check your .env file.");
-}
-// console.log(apiKey)
-const ai = new GoogleGenAI({ apiKey });
+
+const ai = new GoogleGenAI({});
 
 async function main() {
   const response = await ai.models.generateContent({
